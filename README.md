@@ -1,4 +1,4 @@
-# musci
+# music
 
 > A Vue.js project
 
