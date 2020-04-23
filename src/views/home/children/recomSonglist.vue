@@ -7,7 +7,7 @@
         <div class="recommend-list">
             <div class="recommend-item" v-for="(item,index) in recomeList" :key="index">
                 <span class="playCount">
-                    {{item.playCount}}
+                    {{transNumber(item.playCount,1)}}
                     <span>
                         <i class="iconfont icon-erji"></i>
                     </span>
@@ -20,11 +20,13 @@
 </template>
 
 <script>
-//  import {transNumber} from 'components/utils/utils.js'
-// {{ transNumber(item.playCount,1) }}
-export default {
-    mounted(){
+ import {transNumber} from 'components/utils/utils.js'
 
+export default {
+    data(){
+        return{
+            playCount:''
+        }
     },
     props:{
         recomeList:{
@@ -33,7 +35,13 @@ export default {
                 return []
             }
         }
-    }
+    },
+    created(){
+    },
+
+    methods:{
+        transNumber,
+    },
 }
 </script>
 
@@ -67,7 +75,8 @@ export default {
     }
     .recommend-item{
         width: 30%;
-        margin-bottom: 0.25rem;   
+        margin-bottom: 0.25rem; 
+        position: relative;  
     }
     .recommend-item img{
         border-radius:8px;
@@ -83,5 +92,10 @@ export default {
     }
     .playCount{
         font-size: 0.35rem;
+        position: absolute;
+        top: 0;
+        color: #fff;
+        background: rgba(0,0,0,0.1);
+        border-top-left-radius: 8px;
     }
 </style>

@@ -15,6 +15,8 @@ import './fonts/iconfont.css'
 //引入公共js
 import 'assets/js/common.js'
 
+
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
